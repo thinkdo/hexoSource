@@ -57,8 +57,14 @@ tags:
 5、 编辑属性：&lt;table contenteditable="true"&gt;标签内容可编辑
 6、 全局编辑属性：window.document.designMode="on",全体内容均可编辑
 #### 六、属性值
-1、&lt;meta name="viewport"&gt
-viewport可配置为使当前页面适应设备屏幕大小，如&lt;meta name="viewport" content="width=device-width"&gt
+1、&lt;meta name="viewport"/&gt;
+viewport有几个属性，
+a）content="width=device-width"，表示使当前页面“适应设备宽度”
+b）content="user-scalable=0"，表示不允许用户手动缩放，默认值为1
+c）content="initial-scale=1"，表示不对当前“适应设备宽度”的页面进行缩放，这句话的意思是initial-scale本身会将页面适应设备宽度并且针对适应后的宽度设置缩放值，如果initial-scale=2则表示宽度缩小一倍，假如原来的宽度是120px，initial-scale=2后宽度将变为60px。Android系统上initial-scale没有默认值，ios的默认值为动态的，浏览器会自动计算使页面不出现滚动条，导致整个页面缩小。我们想要使当前页面适应设备的宽度，可以使用以下两种方式达到目的：
+&lt;meta name="viewport" value="width=device-width" /&gt;缺点：无法适应iphone和ipad的横屏
+&lt;meta name="viewport" value="initial-scale=1" /&gt;缺点：无法适应windowphone的横屏
+将两个都写上就能互补解决横屏的问题：<meta name="viewport" value="width=device-width,initial-scale=1" />
 
 
 

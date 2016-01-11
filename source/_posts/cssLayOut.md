@@ -1,0 +1,29 @@
+title: css的布局
+date: 2015-11-06 14:55:16
+tags:
+---
+##布局方式
+###一列布局
+通常用于页面元素较少、简单的页面，如百度的首页
+###两列布局
+通常用于博客类页面，左侧是导航，右侧是内容，如我的博客首页
+###三列布局
+纯三列布局的页面用的不多
+###混合布局
+最常用的就是混合布局，即混合以上所有布局方式，在一个页面中。如新浪、淘宝等都是混合布局
+##影响布局的几个属性
+###margin:auto
+块级元素（div、p、form、section等）会重起一行，并尽可能从左到右充满整个空间，width、height属性就是控制块级元素充满整个空间的。
+而margin:auto的作用就是让div水平居中，它的计算基准是当前div的父元素。
+由于限制了width，所以窗口缩小时，会出现滚动条，如何不使其出现滚动条呢？就需要用max-width代替width
+###position
+1.static
+position的默认值就是static，当设置为static的时候就表示它不会被定位，只有设置为其他值的时候才表示它会被定位
+2.relative
+如果position只设置relative，而不设置其top、bottom、left、right时，它和static是一样的。
+而top、bottom、left、right是以当前位置为基准进行偏离的，而不是父元素或窗口为基准
+3.fixed
+相对于视窗来说，它是固定的，即及时页面滚动它都是固定的，我们看到很多网站右下角不动的弹出就是这种方式。
+设置了一个div为fixed，margin:auto会失效，因为它是相对视窗是固定的
+4.absolute
+absolute类似于fixed,但是它是相对于最近的position父元素的，如果没有这个父元素，它会相对的是body。
