@@ -5,7 +5,7 @@ tags:
 [参考文档](http://facebook.github.io/react/docs/getting-started.html)
 在浏览器端用browser.min.js编译jsx的方式很消耗时间，以下方式可将jsx语法的react代码在服务器端转换为普通的js文件，也就实现了react组件化。
 **一、在终端中执行命令：npm install \-\-global babel-cli**
-如果出现错误类似错误：
+babel-cli是babel提供的命令行转码工具，如果出现错误类似错误：
 npm ERR! error rolling back   code: 'EEXIST',
 npm ERR! error rolling back   path: '/Users/hanfeng/.nvm/v0.11.13/bin/babel' }
 npm ERR! Refusing to delete: /Users/hanfeng/.nvm/v0.11.13/bin/babel not in /Users/hanfeng/.nvm/v0.11.13/lib/node_modules/babel-cli
@@ -66,4 +66,4 @@ ReactDOM.render(<HelloWorld />,document.getElementById('container'));
 ```
 这时的helloworld.html与最开始的通过browser.min.js编译的helloworld.html效果是等同的
 
-
+更多babel的使用方式可参考[阮一峰老师的博文](http://www.ruanyifeng.com/blog/2016/01/babel.html)
