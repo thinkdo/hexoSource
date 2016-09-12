@@ -28,6 +28,7 @@ git clone git://github.com/myGitHub/myReposity.git mylocalRepository：该条命
 
 三、提交代码到仓库中
 git add .
+git status
 git commit -m  '提交注释' 
-
+ 
 

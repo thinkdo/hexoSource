@@ -30,6 +30,9 @@ $.ajax({
 		}
 }); 
 ``` 
-textStatus有几种值，"null", "timeout", "error", "notmodified" 和 "parsererror"。
+textStatus有几种值，"null", "timeout", "error", "abort" 和 "parsererror"。发现打印出来的值是timeout，证明是请求超时。
 ###超时
+但是未到超时时间10000ms,为什么会超时？因为async为false时，浏览器已经被锁定，此时不会执行任何javascript，所以timeout不会起到任何作用。只有async是true时，timeout才会起作用。这时候就想到了可能是async的问题，一般来说尽量不要设置async为false，而将业务逻辑放入到success的callback中，这也是jquery1.8版本所倡导的方式。
+###总结
+当后台执行ajax的时间过长，async为false时就会锁住页面，这时微信浏览器会进入到error中，报timeout的错误。解决方法是将async:false去掉，并在success的callback中处理对应业务逻辑。
 
